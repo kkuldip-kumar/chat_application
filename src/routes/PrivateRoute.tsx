@@ -1,6 +1,6 @@
-import { ChatHome } from '@/components/chats/chat-home';
-import ChatsContainer from '@/components/chats/message_window/ChatsContainer';
-import { RootLayout } from '@/components/RootLayout';
+import ConversationLayout from '@/conversations/Conversation';
+import { ConversationWelcome } from '@/conversations/conversation-welcome';
+import { RootLayout } from '@/layouts/RootLayout';
 import { useStore } from '@/store/store';
 import React, { Suspense } from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
@@ -16,7 +16,7 @@ const PrivateRoute = () => {
                     path='/chat'
                     element={
                         <Suspense>
-                            {activeChatUser.id ? <ChatsContainer /> : <ChatHome />}
+                            {activeChatUser.id ? <ConversationLayout /> : <ConversationWelcome />}
                         </Suspense>
                     }
                 />

@@ -4,12 +4,12 @@
 import React, { FC, lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, createBrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import App from "@/App"
-import ErrorPage from "@/error-page";
+import ErrorPage from "@/errors/error-page";
 import { Loader } from "@/components/loader";
 import { useStore } from "@/store/store";
 import { useShallow } from "zustand/react/shallow";
-import { AuthPage } from "@/components/forms/AuthPage";
-import { ChatPage } from "@/components/layout";
+import { AuthPage } from "@/auth/AuthPage";
+import { ChatPage } from "@/layouts/layout";
 import { PrivateRoute } from "./PrivateRoute";
 
 // const PrivateRoute = lazy(() =>

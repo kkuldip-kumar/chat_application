@@ -75,18 +75,10 @@ body {
 
 .custom-loader {
   --d: 22px;
-  width: 4px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   color: #766DF4;
-  box-shadow:
-    calc(1*var(--d)) calc(0*var(--d)) 0 0,
-    calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
-    calc(0*var(--d)) calc(1*var(--d)) 0 2px,
-    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
-    calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
-    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
-    calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
   animation: s7 1s infinite steps(8);
 }
 
@@ -116,4 +108,35 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #8b8b8b;
   cursor: pointer;
+}
+
+/* HTML: <div class="loader"></div> */
+.custom-loader {
+  width: 40px;
+  height: 20px;
+  background:
+    radial-gradient(circle closest-side, #766DF4 90%, #0000) 0% 50%,
+    radial-gradient(circle closest-side, #766DF4 90%, #0000) 50% 50%,
+    radial-gradient(circle closest-side, #766DF4 90%, #0000) 100% 50%;
+  background-size: calc(100%/3) 12px;
+  background-repeat: no-repeat;
+  animation: d3 1s infinite linear;
+}
+
+@keyframes d3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%
+  }
+
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%
+  }
+
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%
+  }
+
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%
+  }
 }
